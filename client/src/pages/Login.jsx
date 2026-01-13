@@ -10,15 +10,16 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/user/login', { email, password });
+      // UPDATED URL HERE
+      const res = await axios.post('https://day17-project17.onrender.com/api/user/login', { email, password });
       
       // 1. Token aur User Info save karo
       localStorage.setItem('token', res.data.token);
-      localStorage.setItem('user', JSON.stringify(res.data.user)); // User ka naam/plan save kar liya
+      localStorage.setItem('user', JSON.stringify(res.data.user)); 
       
       // 2. Dashboard par jao
       navigate('/dashboard');
-      window.location.reload(); // Page refresh taaki Navbar update ho jaye
+      window.location.reload(); 
     } catch (err) {
       alert('Invalid Credentials');
     }

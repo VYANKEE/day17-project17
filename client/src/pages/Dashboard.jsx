@@ -30,7 +30,8 @@ const Dashboard = () => {
     try {
       setTimeout(async () => {
         try {
-          const res = await axios.get('http://localhost:5000/api/user/premium-content', {
+          // UPDATED URL HERE
+          const res = await axios.get('https://day17-project17.onrender.com/api/user/premium-content', {
             headers: { 'auth-token': token }
           });
           setPremiumContent(res.data.message);
@@ -49,7 +50,8 @@ const Dashboard = () => {
     const token = localStorage.getItem('token');
     if(window.confirm("Confirm transaction of $99/mo for Premium Clearance?")) {
       try {
-        const res = await axios.post('http://localhost:5000/api/user/upgrade', {}, {
+        // UPDATED URL HERE
+        const res = await axios.post('https://day17-project17.onrender.com/api/user/upgrade', {}, {
           headers: { 'auth-token': token }
         });
         

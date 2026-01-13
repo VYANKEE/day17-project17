@@ -15,10 +15,10 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Backend ko data bhejo
-      await axios.post('http://localhost:5000/api/user/register', formData);
+      // UPDATED URL HERE
+      await axios.post('https://day17-project17.onrender.com/api/user/register', formData);
       alert('Registration Successful! Please Login.');
-      navigate('/login'); // Login page pe bhej do
+      navigate('/login'); 
     } catch (err) {
       alert('Error: ' + err.response.data);
     }
